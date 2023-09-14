@@ -48,7 +48,7 @@ print('덧셈', c.add())
 ```
 
 추출적 요약을 진행하시지 못한것으로 보입니다. 아래 제가 작성한 추출성 요약 코드와 간단한 설명을 남깁니다.
-
+```python
 import requests
 from summa.summarizer import summarize
 
@@ -64,5 +64,5 @@ for idx, text in enumerate(data['text']):
 # 출력 길이를 조정
     if idx == 4:
         break
-
+```
   데이터 로드를 다시 하는 이유는 기존에 전처리한 데이터로 summarized 진행시 함수가 이미 텍스트가 충분히 요약이 되어있다고 판단해 빈 문자열을 반환하기 때문입니다. 때문에 새로 데이터를 불러와 텍스트 열만을 추출하여 for문을 이용 summarized를 진행합니다.
