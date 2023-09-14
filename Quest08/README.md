@@ -1,7 +1,7 @@
 # AIFFEL Campus Online 5th Code Peer Review Templete
-### 뉴스기사 요약#
+### 뉴스기사 요약
 - 코더 : 심지안
-- 리뷰어 : 서원
+- 리뷰어 : 서원영
 
 
 # PRT(PeerReviewTemplate) 
