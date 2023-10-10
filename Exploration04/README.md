@@ -9,9 +9,11 @@
   > 주어진 문제를 잘 해결하였다.
 - [] **2. 전체 코드에서 가장 핵심적이거나 가장 복잡하고 이해하기 어려운 부분에 작성된
   주석 또는 doc string을 보고 해당 코드가 잘 이해되었나요?**
-  >![image](https://github.com/jiansim03/AIFFEL_ONLINE_QUEST/assets/66249499/1d2abed4-31c9-4297-97d0-80445414c5a4)
+
+  > ![image](https://github.com/jiansim03/AIFFEL_ONLINE_QUEST/assets/66249499/1d2abed4-31c9-4297-97d0-80445414c5a4)
 
   > 각 코드마다 주석이 잘 삭성되어 있어 이해하기 쉬웠다.
+
 - [] **3. 에러가 난 부분을 디버깅하여 문제를 “해결한 기록을 남겼거나”
   ”새로운 시도 또는 추가 실험을 수행”해봤나요?**
   >
@@ -48,11 +50,13 @@ print('덧셈', c.add())
 ```
 
 # 참고 링크 및 코드 개선
+
 DCGAN의 학습은 판별자와 생성자 사이의 균형이 중요하기 때문에, 둘 중 하나가 너무 강력해지면 문제가 발생할 수 있고 합니다. 이를 해결하기 위에선 다음과 같은 방법이 있습니다.
-1) 판별자의 학습률 감소
-2) 생성자의 학습률 증가
-3) 더 복잡한 모델
-4) 라벨 스무딩(Label Smoothing)
+
+1. 판별자의 학습률 감소
+2. 생성자의 학습률 증가
+3. 더 복잡한 모델
+4. 라벨 스무딩(Label Smoothing)
 
 이중 라벨스무딩을 적용한 코드를 예시로 남깁니다.
 
@@ -85,8 +89,8 @@ def train_step(images):
         gen_loss = generator_loss(fake_output)
         disc_loss = discriminator_loss(real_output, fake_output, real_labels, fake_labels)
 
-        real_accuracy, fake_accuracy = discriminator_accuracy(real_output, fake_output) 
-    
+        real_accuracy, fake_accuracy = discriminator_accuracy(real_output, fake_output)
+
     gradients_of_generator = gen_tape.gradient(gen_loss, generator.trainable_variables)
     gradients_of_discriminator = disc_tape.gradient(disc_loss, discriminator.trainable_variables)
 
@@ -108,5 +112,5 @@ def discriminator_loss(real_output, fake_output, real_labels, fake_labels):
     total_loss = real_loss + fake_loss
     return total_loss
 ```
-이렇게 하면 함수가 더 유연하게 레이블을 사용하여 손실을 계산할 수 있습니다.
 
+이렇게 하면 함수가 더 유연하게 레이블을 사용하여 손실을 계산할 수 있습니다.
